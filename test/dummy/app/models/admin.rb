@@ -3,7 +3,7 @@ class Admin < ActiveRecord::Base
 
   def self.from_token_request request
     email = request.params["auth"] && request.params["auth"]["email"]
-    self.find_by email: email
+    self.find_by_email(email)
   end
 
   def self.from_token_payload payload

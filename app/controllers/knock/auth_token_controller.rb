@@ -28,7 +28,7 @@ module Knock
         if entity_class.respond_to? :from_token_request
           entity_class.from_token_request request
         else
-          entity_class.find_by email: auth_params[:email]
+          entity_class.find_by_email(auth_params[:email])
         end
     end
 
