@@ -2,7 +2,7 @@ require_dependency "knock/application_controller"
 
 module Knock
   class AuthTokenController < ApplicationController
-    before_action :authenticate
+    before_filter :authenticate
 
     def create
       render json: auth_token, status: :created

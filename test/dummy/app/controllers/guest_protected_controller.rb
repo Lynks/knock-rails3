@@ -1,5 +1,5 @@
 class GuestProtectedController < ApplicationController
-  before_action :authenticate_guest
+  before_filter :authenticate_guest
 
   def index
     head :ok

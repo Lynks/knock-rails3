@@ -1,7 +1,7 @@
 module V1
   class TestNamespacedController < ApplicationController
 
-    before_action :authenticate_v1_user
+    before_filter :authenticate_v1_user
 
     def index
       head :ok
