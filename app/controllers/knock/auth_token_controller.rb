@@ -41,7 +41,7 @@ module Knock
     end
 
     def auth_params
-      params.require(:auth).permit :email, :password
+      params[:auth]
     end
   end
 end
