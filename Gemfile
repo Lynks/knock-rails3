@@ -14,6 +14,7 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem "simplecov", require: false, group: :test
+gem 'strong_parameters'
 
 group :development do
   gem "bundler"
