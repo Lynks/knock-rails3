@@ -12,7 +12,7 @@ module Knock::Authenticable
   end
 
   def method_missing(method, *args)
-    prefix, entity_name = method.to_s.split('_', 2)
+    prefix, api_prefix, entity_name = method.to_s.split('_', 3)
     case prefix
     when 'authenticate'
       unauthorized_entity(entity_name) unless authenticate_entity(entity_name)
