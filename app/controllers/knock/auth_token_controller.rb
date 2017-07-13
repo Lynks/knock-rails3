@@ -5,7 +5,7 @@ module Knock
     before_filter :authenticate
 
     def create
-      render json: {user: entity, token: auth_token.token}, status: :created
+      render json: auth_token, status: :created
     end
 
   private
