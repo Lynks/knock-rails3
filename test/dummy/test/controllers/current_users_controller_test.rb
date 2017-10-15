@@ -3,7 +3,7 @@ require 'test_helper'
 class CurrentUsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:one)
-    @token = KnockKnock::AuthToken.new(payload: { sub: @user.id }).token
+    @token = KnockRails3::AuthToken.new(payload: { sub: @user.id }).token
   end
 
   def authenticate token: @token

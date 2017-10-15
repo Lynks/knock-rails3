@@ -1,4 +1,4 @@
-module KnockKnock::Authenticable
+module KnockRails3::Authenticable
   def authenticate_for entity_class
     getter_name = "current_api_#{entity_class.to_s.parameterize.underscore}"
     define_current_entity_getter(entity_class, getter_name)
@@ -47,8 +47,8 @@ module KnockKnock::Authenticable
         unless instance_variable_defined?(memoization_var_name)
           current =
             begin
-              KnockKnock::AuthToken.new(token: token).entity_for(entity_class)
-            rescue KnockKnock.not_found_exception_class, JWT::DecodeError
+              KnockRails3::AuthToken.new(token: token).entity_for(entity_class)
+          rescue KnockRails3.not_found_exception_class, JWT::DecodeError
               nil
             end
           instance_variable_set(memoization_var_name, current)

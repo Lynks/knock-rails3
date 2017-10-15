@@ -23,23 +23,23 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActiveSupport::TestCase.fixtures :all
 end
 
-module KnockKnock
+module KnockRails3
   class MyCustomException < StandardError
   end
 end
 
-# Make sure KnockKnock global configuration is reset before every tests
+# Make sure KnockRails3 global configuration is reset before every tests
 # to avoid order dependent failures.
 class ActiveSupport::TestCase
-  setup :reset_KnockKnock_configuration
+  setup :reset_KnockRails3_configuration
 
   private
 
-  def reset_KnockKnock_configuration
-    KnockKnock.token_signature_algorithm = 'HS256'
-    KnockKnock.token_secret_signature_key = -> { Rails.application.secrets.secret_key_base }
-    KnockKnock.token_public_key = nil
-    KnockKnock.token_audience = nil
-    KnockKnock.token_lifetime = 1.day
+  def reset_KnockRails3_configuration
+    KnockRails3.token_signature_algorithm = 'HS256'
+    KnockRails3.token_secret_signature_key = -> { Rails.application.secrets.secret_key_base }
+    KnockRails3.token_public_key = nil
+    KnockRails3.token_audience = nil
+    KnockRails3.token_lifetime = 1.day
   end
 end

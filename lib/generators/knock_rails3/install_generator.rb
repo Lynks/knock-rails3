@@ -1,13 +1,13 @@
 require 'rails/generators'
 
-module KnockKnock
+module KnockRails3
   class InstallGenerator < Rails::Generators::Base
     source_root File.expand_path("../../templates", __FILE__)
 
-    desc "Creates a KnockKnock initializer."
+    desc "Creates a KnockRails3 initializer."
 
     def copy_initializer
-      template 'knock_knock.rb', 'config/initializers/knock_knock.rb'
+      template 'knock_rails3.rb', 'config/initializers/knock_rails3.rb'
     end
   end
 end

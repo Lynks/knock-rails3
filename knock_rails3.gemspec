@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "knock_knock/version"
+require "knock_rails3/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "KnockKnock"
-  s.version     = KnockKnock::VERSION
+  s.name        = "KnockRails3"
+  s.version     = KnockRails3::VERSION
   s.authors     = ["Hussein", "Rudy"]
   s.email       = ["engineering@lynks.com"]
   s.homepage    = "https://github.com/Lynks/Knock-rails3"

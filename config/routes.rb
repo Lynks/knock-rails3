@@ -1,3 +1,3 @@
-KnockKnock::Engine.routes.draw do
+KnockRails3::Engine.routes.draw do
   post 'auth_token' => 'auth_token#create'
 end

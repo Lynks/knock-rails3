@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :KnockKnock do
+# task :KnockRails3 do
 #   # Task goes here
 # end

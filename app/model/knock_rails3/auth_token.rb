@@ -1,6 +1,6 @@
 require 'jwt'
 
-module KnockKnock
+module KnockRails3
   class AuthToken
     attr_reader :token
     attr_reader :payload
@@ -13,7 +13,7 @@ module KnockKnock
         @payload = claims.merge(payload)
         @token = JWT.encode @payload,
           secret_key,
-          KnockKnock.token_signature_algorithm
+          KnockRails3.token_signature_algorithm
       end
     end
 
@@ -31,16 +31,16 @@ module KnockKnock
 
   private
     def secret_key
-      KnockKnock.token_secret_signature_key.call
+      KnockRails3.token_secret_signature_key.call
     end
 
     def decode_key
-      KnockKnock.token_public_key || secret_key
+      KnockRails3.token_public_key || secret_key
     end
 
     def options
       verify_claims.merge({
-        algorithm: KnockKnock.token_signature_algorithm
+        algorithm: KnockRails3.token_signature_algorithm
       })
     end
 
@@ -52,11 +52,11 @@ module KnockKnock
     end
 
     def token_lifetime
-      KnockKnock.token_lifetime.from_now.to_i if verify_lifetime?
+      KnockRails3.token_lifetime.from_now.to_i if verify_lifetime?
     end
 
     def verify_lifetime?
-      !KnockKnock.token_lifetime.nil?
+      !KnockRails3.token_lifetime.nil?
     end
 
     def verify_claims
@@ -68,11 +68,11 @@ module KnockKnock
     end
 
     def token_audience
-      verify_audience? && KnockKnock.token_audience.call
+      verify_audience? && KnockRails3.token_audience.call
     end
 
     def verify_audience?
-      KnockKnock.token_audience.present?
+      KnockRails3.token_audience.present?
     end
   end
 end

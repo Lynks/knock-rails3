@@ -1,7 +1,7 @@
 require 'test_helper'
 # require 'timecop'
 
-module KnockKnock
+module KnockRails3
   class TestNamespacedControllerTest < ActionDispatch::IntegrationTest
 
     setup do
@@ -9,7 +9,7 @@ module KnockKnock
     end
 
     test "allow namespaced models" do
-      token = KnockKnock::AuthToken.new(payload: { sub: @user.id }).token
+      token = KnockRails3::AuthToken.new(payload: { sub: @user.id }).token
       get v1_test_namespaced_index_url, headers: {'Authorization': "Bearer #{token}"}
       assert_response :ok
       assert_equal @user, @controller.current_v1_user

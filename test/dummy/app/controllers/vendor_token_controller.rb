@@ -1,2 +1,2 @@
-class VendorTokenController < KnockKnock::AuthTokenController
+class VendorTokenController < KnockRails3::AuthTokenController
 end

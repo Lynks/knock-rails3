@@ -2,7 +2,7 @@ require 'test_helper'
 
 class GuestProtectedControllerTest < ActionController::TestCase
   def setup
-    @token = KnockKnock::AuthToken.new(payload: { sub: "1" }).token
+    @token = KnockRails3::AuthToken.new(payload: { sub: "1" }).token
   end
 
   def authenticate token: @token

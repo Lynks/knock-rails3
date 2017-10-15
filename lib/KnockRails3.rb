@@ -1,6 +1,6 @@
-require "knock_knock/engine"
+require "knock_rails3/engine"
 
-module KnockKnock
+module KnockRails3
   mattr_accessor :token_lifetime
   self.token_lifetime = 1.day
 
@@ -23,7 +23,7 @@ module KnockKnock
     not_found_exception_class_name.to_s.constantize
   end
 
-  # Default way to setup KnockKnock. Run `rails generate KnockKnock:install` to create
+  # Default way to setup KnockRails3. Run `rails generate KnockRails3:install` to create
   # a fresh initializer with all configuration values.
   def self.setup
     yield self

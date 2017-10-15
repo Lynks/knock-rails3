@@ -1,12 +1,12 @@
 require 'rails/generators'
 
-module KnockKnock
+module KnockRails3
   class TokenControllerGenerator < Rails::Generators::Base
     source_root File.expand_path("../../templates", __FILE__)
     argument :name, type: :string
 
     desc <<-DESC
-      Creates a KnockKnock token controller for the given entity
+      Creates a KnockRails3 token controller for the given entity
       and add the corresponding routes.
     DESC
 

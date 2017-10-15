@@ -1,4 +1,4 @@
-KnockKnock.setup do |config|
+KnockRails3.setup do |config|
 
   ## Expiration claim
   ## ----------------

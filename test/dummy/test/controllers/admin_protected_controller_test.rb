@@ -3,7 +3,7 @@ require 'test_helper'
 class AdminProtectedControllerTest < ActionController::TestCase
   def valid_auth
     @admin = admins(:one)
-    @token = KnockKnock::AuthToken.new(payload: { sub: @admin.id }).token
+    @token = KnockRails3::AuthToken.new(payload: { sub: @admin.id }).token
     @request.env['HTTP_AUTHORIZATION'] = "Bearer #{@token}"
   end
 
@@ -13,7 +13,7 @@ class AdminProtectedControllerTest < ActionController::TestCase
   end
 
   def invalid_entity_auth
-    @token = KnockKnock::AuthToken.new(payload: { sub: 0 }).token
+    @token = KnockRails3::AuthToken.new(payload: { sub: 0 }).token
     @request.env['HTTP_AUTHORIZATION'] = "Bearer #{@token}"
   end
 

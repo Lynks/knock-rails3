@@ -23,15 +23,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.5] - 2016-05-29
 ### Added
-- Exception configuration option `KnockKnock.not_found_exception_class_name`
+- Exception configuration option `KnockRails3.not_found_exception_class_name`
 - Multiple entity authentication (e.g. User, Admin, etc)
 - Possibility to have permanent tokens
 - Adding config options for exception class
-- Generator for token controller. E.g. `rails g KnockKnock:token_controller user`
+- Generator for token controller. E.g. `rails g KnockRails3:token_controller user`
 
 ### Changed
 - Deprecated `Authenticable#authenticate` in favor of `Authenticable#authenticate_user`
-- Deprecated use of `KnockKnock.current_user_from_token` in favor of `User.from_token_payload`
+- Deprecated use of `KnockRails3.current_user_from_token` in favor of `User.from_token_payload`
 - Deprecated use of direct route to `AuthTokenController` in favor of generating  a token controller
 - No need to mount the engine in `config/routes.rb` anymore
 
@@ -81,17 +81,17 @@ of the `Bearer` prefix.
 
 ## [1.1.0.rc1] - 2015-07-15
 ### Added
-- `KnockKnock.token_lifetime` configuration variable
-- `KnockKnock.token_secret_signature_key` configuration variable
-- `KnockKnock.token_audience` configuration variable
+- `KnockRails3.token_lifetime` configuration variable
+- `KnockRails3.token_secret_signature_key` configuration variable
+- `KnockRails3.token_audience` configuration variable
 - audience claim verification when decoding token
-- `KnockKnock.setup` method for configuration in `KnockKnock.rb` initializer
-- generator for initializer (rails g KnockKnock:install)
+- `KnockRails3.setup` method for configuration in `KnockRails3.rb` initializer
+- generator for initializer (rails g KnockRails3:install)
 
 ## [1.0.0] - 2015-07-14
 
 ## [1.0.0.rc1] - 2015-07-14
 ### Added
-- `KnockKnock::Authenticable` to secure endpoints with `before_action :authenticate`
+- `KnockRails3::Authenticable` to secure endpoints with `before_action :authenticate`
 - `AuthToken` model provides JWT encapsulation
 - `AuthTokenController` provides out of the box sign in implementation
