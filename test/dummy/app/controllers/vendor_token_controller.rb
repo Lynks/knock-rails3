@@ -1,2 +1,2 @@
-class VendorTokenController < Knock::AuthTokenController
+class VendorTokenController < KnockKnock::AuthTokenController
 end

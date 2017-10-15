@@ -1,6 +1,6 @@
-module Knock
+module KnockKnock
   class ApplicationController < ActionController::Base
-    rescue_from Knock.not_found_exception_class_name, with: :not_found
+    rescue_from KnockKnock.not_found_exception_class_name, with: :not_found
 
   private
 

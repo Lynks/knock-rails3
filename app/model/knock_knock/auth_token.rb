@@ -1,6 +1,6 @@
 require 'jwt'
 
-module Knock
+module KnockKnock
   class AuthToken
     attr_reader :token
     attr_reader :payload
@@ -13,7 +13,7 @@ module Knock
         @payload = claims.merge(payload)
         @token = JWT.encode @payload,
           secret_key,
-          Knock.token_signature_algorithm
+          KnockKnock.token_signature_algorithm
       end
     end
 
@@ -31,16 +31,16 @@ module Knock
 
   private
     def secret_key
-      Knock.token_secret_signature_key.call
+      KnockKnock.token_secret_signature_key.call
     end
 
     def decode_key
-      Knock.token_public_key || secret_key
+      KnockKnock.token_public_key || secret_key
     end
 
     def options
       verify_claims.merge({
-        algorithm: Knock.token_signature_algorithm
+        algorithm: KnockKnock.token_signature_algorithm
       })
     end
 
@@ -52,11 +52,11 @@ module Knock
     end
 
     def token_lifetime
-      Knock.token_lifetime.from_now.to_i if verify_lifetime?
+      KnockKnock.token_lifetime.from_now.to_i if verify_lifetime?
     end
 
     def verify_lifetime?
-      !Knock.token_lifetime.nil?
+      !KnockKnock.token_lifetime.nil?
     end
 
     def verify_claims
@@ -68,11 +68,11 @@ module Knock
     end
 
     def token_audience
-      verify_audience? && Knock.token_audience.call
+      verify_audience? && KnockKnock.token_audience.call
     end
 
     def verify_audience?
-      Knock.token_audience.present?
+      KnockKnock.token_audience.present?
     end
   end
 end

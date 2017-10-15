@@ -1,17 +1,17 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "knock/version"
+require "knock_knock/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "knock"
-  s.version     = Knock::VERSION
-  s.authors     = ["Arnaud MESUREUR", "Ghjuvan-Carlu BIANCHI"]
-  s.email       = ["arnaud.mesureur@gmail.com"]
-  s.homepage    = "https://github.com/nsarno/knock"
-  s.summary     = "Seamless JWT authentication for Rails API."
-  s.description = "Authentication solution for Rails based on JWT"
+  s.name        = "KnockKnock"
+  s.version     = KnockKnock::VERSION
+  s.authors     = ["Hussein", "Rudy"]
+  s.email       = ["engineering@lynks.com"]
+  s.homepage    = "https://github.com/Lynks/Knock-rails3"
+  s.summary     = "Seamless JWT authentication for Rails 3 API."
+  s.description = "Authentication solution for Rails 3 based on JWT"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]

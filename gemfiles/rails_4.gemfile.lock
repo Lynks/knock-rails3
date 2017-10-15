@@ -1,7 +1,7 @@
 PATH
   remote: ../
   specs:
-    knock (1.5)
+    KnockKnock (1.5)
       bcrypt (~> 3.1)
       jwt (~> 1.5)
       rails (>= 4.2)
@@ -128,7 +128,7 @@ DEPENDENCIES
   appraisal
   bundler
   codeclimate-test-reporter
-  knock!
+  KnockKnock!
   rack (< 2)
   rails (~> 4.2.6)
   rake

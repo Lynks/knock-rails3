@@ -1,6 +1,6 @@
-require_dependency "knock/application_controller"
+require_dependency "knock_knock/application_controller"
 
-module Knock
+module KnockKnock
   class AuthTokenController < ApplicationController
     before_filter :authenticate
 
@@ -11,7 +11,7 @@ module Knock
   private
     def authenticate
       unless entity.present? && entity.authenticate(auth_params[:password])
-        raise Knock.not_found_exception_class
+        raise KnockKnock.not_found_exception_class
       end
     end
 

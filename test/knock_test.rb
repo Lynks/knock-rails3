@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class KnockTest < ActiveSupport::TestCase
+class KnockKnockTest < ActiveSupport::TestCase
   test 'setup block yields self' do
-    Knock.setup do |config|
-      assert_equal Knock, config
+    KnockKnock.setup do |config|
+      assert_equal KnockKnock, config
     end
   end
 end

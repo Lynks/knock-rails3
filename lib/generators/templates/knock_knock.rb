@@ -1,4 +1,4 @@
-Knock.setup do |config|
+KnockKnock.setup do |config|
 
   ## Expiration claim
   ## ----------------

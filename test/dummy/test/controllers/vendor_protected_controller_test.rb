@@ -3,7 +3,7 @@ require 'test_helper'
 class VendorProtectedControllerTest < ActionController::TestCase
   def valid_auth
     @vendor = vendors(:one)
-    @token = Knock::AuthToken.new(payload: { sub: @vendor.id }).token
+    @token = KnockKnock::AuthToken.new(payload: { sub: @vendor.id }).token
     @request.env['HTTP_AUTHORIZATION'] = "Bearer #{@token}"
   end
 
@@ -13,7 +13,7 @@ class VendorProtectedControllerTest < ActionController::TestCase
   end
 
   def invalid_entity_auth
-    @token = Knock::AuthToken.new(payload: { sub: 0 }).token
+    @token = KnockKnock::AuthToken.new(payload: { sub: 0 }).token
     @request.env['HTTP_AUTHORIZATION'] = "Bearer #{@token}"
   end
 

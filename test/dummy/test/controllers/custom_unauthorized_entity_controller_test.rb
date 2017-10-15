@@ -3,7 +3,7 @@ require 'test_helper'
 class CustomUnauthorizedEntityControllerTest < ActionController::TestCase
   def valid_auth
     @user = users(:one)
-    @token = Knock::AuthToken.new(payload: { sub: @user.id }).token
+    @token = KnockKnock::AuthToken.new(payload: { sub: @user.id }).token
     @request.env['HTTP_AUTHORIZATION'] = "Bearer #{@token}"
   end
 
@@ -13,7 +13,7 @@ class CustomUnauthorizedEntityControllerTest < ActionController::TestCase
   end
 
   def invalid_entity_auth
-    @token = Knock::AuthToken.new(payload: { sub: 0 }).token
+    @token = KnockKnock::AuthToken.new(payload: { sub: 0 }).token
     @request.env['HTTP_AUTHORIZATION'] = "Bearer #{@token}"
   end
 

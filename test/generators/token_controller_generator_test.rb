@@ -3,7 +3,7 @@ require "test_helper"
 class TokenControllerGeneratorTest < Rails::Generators::TestCase
   include GeneratorsTestHelper
 
-  tests Knock::TokenControllerGenerator
+  tests KnockKnock::TokenControllerGenerator
   destination File.expand_path("../tmp", File.dirname(__FILE__))
 
   setup :prepare_destination
